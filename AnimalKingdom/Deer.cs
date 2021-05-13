@@ -10,11 +10,12 @@ namespace AnimalKingdom
         public int hunger_value { get; set; }
         public int hunger_threshold { get; }
         public bool ability_to_look_around { get; set; }
-
+        public int deer_count { get; set; }
 
        
         public Deer(int hunger_value, int hunger_threshold, bool ability) {
             this.name = "Daisy the Deer";
+            //this.count = Convert.ToInt32(Console.ReadLine());
             this.hunger_value = hunger_value;
             this.hunger_threshold = hunger_threshold;
             this.ability_to_look_around = ability;

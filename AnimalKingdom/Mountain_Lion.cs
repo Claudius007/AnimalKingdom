@@ -24,8 +24,14 @@ namespace AnimalKingdom
 
         public bool Hungry()
         {
-            Deer daisy_to_simba = new Deer(5,2,true);
-            return daisy_to_simba.Hungry();
+            if (hunger_value < hunger_threshold)
+            {
+                ability_to_look_around = true;
+
+                return true;
+            }
+            else
+                return false;
         }
 
         public void what_to_do()
@@ -117,14 +123,12 @@ namespace AnimalKingdom
             if (num_of_deer >= 1)
             {
 
-                Tree tree = new Tree(num_of_deer);
-
-                int trees_left = tree.count - 1;
+                int deers_left = num_of_deer-1;
 
                 hunger_value = hunger_value + 1;
-                Console.WriteLine($"{name} ate a tree and now it is removed from the world. \n trees left:  { trees_left} \n hunger value: { hunger_value }");
+                Console.WriteLine($"{name} ate a deer and now it is removed from the world. \n deers left:  { deers_left} \n hunger value: { hunger_value }");
 
-                while ((hunger_value < hunger_threshold) && (trees_left > 1))
+                while ((hunger_value < hunger_threshold) && (deers_left > 1))
                 {
                     Eat();
                 }
